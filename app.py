@@ -1,13 +1,15 @@
 import streamlit as st
 from dotenv import load_dotenv
-
-load_dotenv() ##load all the nevironment variables
+load_dotenv() 
 import os
 import google.generativeai as genai
-
 from youtube_transcript_api import YouTubeTranscriptApi
 
+
+
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+
 
 prompt="""You are Yotube video summarizer. You will be taking the transcript text
 and summarizing the entire video and providing the important summary in points
@@ -18,25 +20,21 @@ within 250 words. Please provide the summary of the text given here:  """
 def extract_transcript_details(youtube_video_url):
     try:
         video_id=youtube_video_url.split("=")[1]
-        
         transcript_text=YouTubeTranscriptApi.get_transcript(video_id)
-
         transcript = ""
         for i in transcript_text:
             transcript += " " + i["text"]
-
         return transcript
-
     except Exception as e:
         raise e
     
+
 ## getting the summary based on Prompt from Google Gemini Pro
 def generate_gemini_content(transcript_text,prompt):
-
     model=genai.GenerativeModel("gemini-2.0-flash")
     response=model.generate_content(prompt+transcript_text)
     return response.text
-st.title("YouTube Transcript to Detailed Notes Converter")
+st.title("YouTube Video to Detailed Notes Converter")
 
 
 st.markdown("""
@@ -45,6 +43,7 @@ st.markdown("""
 - This app uses Google Gemini API, which may consume API tokens.
 - Frequent usage may lead to exceeding free-tier limits.
 """)
+
 youtube_link = st.text_input("Enter YouTube Video Link:")
 
 if youtube_link:
@@ -62,7 +61,6 @@ if st.button("Get Detailed Notes"):
 
 st.markdown("""
 ---
-Thank you for using this application! 😊
+Thank you for using this application!😊
+            ---S.H.Rony 
 """)
-
-
