@@ -1,0 +1,13 @@
+prefix=F:/projects/llm_engineering/yt_vdo_tx/venv/Library
+exec_prefix=F:/projects/llm_engineering/yt_vdo_tx/venv/Library
+libdir=F:/projects/llm_engineering/yt_vdo_tx/venv/Library/lib
+sharedlibdir=F:/projects/llm_engineering/yt_vdo_tx/venv/Library/lib
+includedir=F:/projects/llm_engineering/yt_vdo_tx/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
