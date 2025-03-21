@@ -36,8 +36,15 @@ def generate_gemini_content(transcript_text,prompt):
     model=genai.GenerativeModel("gemini-2.0-flash")
     response=model.generate_content(prompt+transcript_text)
     return response.text
-
 st.title("YouTube Transcript to Detailed Notes Converter")
+
+
+st.markdown("""
+---
+**⚠️ Important Note:**
+- This app uses Google Gemini API, which may consume API tokens.
+- Frequent usage may lead to exceeding free-tier limits.
+""")
 youtube_link = st.text_input("Enter YouTube Video Link:")
 
 if youtube_link:
@@ -53,6 +60,9 @@ if st.button("Get Detailed Notes"):
         st.markdown("## Detailed Notes:")
         st.write(summary)
 
-
+st.markdown("""
+---
+Thank you for using this application! 😊
+""")
 
 
