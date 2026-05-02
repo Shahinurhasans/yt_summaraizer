@@ -7,14 +7,14 @@ This Streamlit application extracts transcripts from YouTube videos and generate
 ## Features
 
 - Extracts transcript text from any YouTube video with subtitles.
-- Uses Google Gemini AI to generate a **250-word** summarized version.
+- Uses Google Gemini AI to generate a 250-word summarized version.
 - Displays the video thumbnail for easy reference.
 - Simple and user-friendly interface.
 
 ## How It Works
 
-1. **Enter a YouTube Video URL** in the input field.
-2. Click the **'Get Detailed Notes'** button.
+1. Enter a YouTube Video URL in the input field.
+2. Click the Get Detailed Notes button.
 3. The app retrieves the transcript and generates a summary.
 4. The summarized notes are displayed in markdown format.
 
@@ -23,7 +23,7 @@ This Streamlit application extracts transcripts from YouTube videos and generate
 ### Prerequisites
 
 - Python 3.8+
-- A valid **Google Gemini API Key**
+- A valid Google Gemini API Key
 - Required Python libraries: `streamlit`, `google-generativeai`, `youtube-transcript-api`, `python-dotenv`
 
 ### Setup
@@ -48,7 +48,7 @@ This Streamlit application extracts transcripts from YouTube videos and generate
 
 ## Usage Notes
 
-- This app relies on **Google Gemini AI**, which may consume API tokens.
+- This app relies on Google Gemini AI, which may consume API tokens.
 - Some YouTube videos may not have transcripts available.
 
 ## License
